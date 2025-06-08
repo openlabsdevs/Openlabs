@@ -8,17 +8,9 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
-import { Metadata } from "next"
 
 
-//disable-use-client-then it.
-export const metadata: Metadata = {
-  title: 'Openlabs',
-  description: '',
-  icons: {
-    icon: './favicon.ico',
-  },
-};
+
 
 
 
@@ -34,7 +26,7 @@ export default function OpenLabsLanding() {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background ">
       {/* Navbar */}
       <Navbar />
 
@@ -45,13 +37,13 @@ export default function OpenLabsLanding() {
       <About />
 
       {/* Completed Projects Section */}
-      <CompletedProjects />
+      {/* <CompletedProjects /> */} 
 
       {/* Ongoing Projects Section */}
       <OngoingProjects />
 
       {/* Testimonials Section */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* Members Section */}
       <Members />

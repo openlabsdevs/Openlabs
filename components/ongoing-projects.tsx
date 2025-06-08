@@ -31,33 +31,33 @@ export function OngoingProjects() {
         <section id="ongoing" className="py-20 px-6 lg:px-24 ">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-semibold text-black mb-4">Ongoing Projects</h2>
-                    <p className="text-gray-600">Join our latest initiatives and contribute</p>
+                    <h2 className="text-4xl font-semibold mb-4">Ongoing Projects</h2>
+                    <p className="">Join our latest initiatives and contribute</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {ongoingProjects.map((project, index) => (
                         <div
                             key={index}
-                            className="relative bg-gray-50 border border-gray-200 rounded-2xl shadow-sm p-6 hover:border-gray-400 hover:scale-105 transition-all duration-200"
+                            className="relative  rounded-2xl shadow-sm p-6  hover:scale-105 transition-all duration-200"
                         >
                             <img src={project.logo || "/placeholder.svg"} alt={`${project.name} logo`} className="w-16 h-16 mb-4" />
-                            <h3 className="text-xl font-semibold text-black mb-2">{project.name}</h3>
-                            <p className="text-gray-600 leading-relaxed mb-4">{project.description}</p>
+                            <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+                            <p className=" leading-relaxed mb-4">{project.description}</p>
 
                             <div className="mb-6">
-                                <div className="bg-gray-200 rounded-full h-2 w-full">
+                                <div className=" rounded-full h-2 w-full">
                                     <div
-                                        className="bg-black h-2 rounded-full transition-all duration-300"
+                                        className=" h-2 rounded-full transition-all duration-300"
                                         style={{ width: `${project.progress}%` }}
                                     ></div>
                                 </div>
-                                <p className="text-sm text-gray-500 mt-1">{project.progress}% complete</p>
+                                <p className="text-sm mt-1">{project.progress}% complete</p>
                             </div>
 
                             <Button
                                 variant="outline"
-                                className="absolute bottom-6 right-6 border-black text-black hover:bg-black hover:text-white"
+                                className="absolute bottom-6 right-6"
                             >
                                 Join Now
                             </Button>
