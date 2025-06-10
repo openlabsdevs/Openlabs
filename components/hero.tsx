@@ -2,10 +2,14 @@
 
 import { ArrowDown } from "lucide-react";
 import { Button } from "./ui/button";
+import { Aurora } from "./animated-background";
 
 export function Hero() {
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center pt-16">
+      <div>
+        <Aurora/>
+      </div>
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-bold mb-3">Empowering Open-Source Collaboration</h1>
           <p className="text-xl mb-8 leading-relaxed">

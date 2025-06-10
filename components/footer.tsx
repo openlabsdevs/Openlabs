@@ -19,15 +19,15 @@ export function Footer() {
                             <a href="#about" className="block transition-colors text-sm">
                                 About
                             </a>
-                            <a href="#completed" className="block transition-colors text-sm">
+                            {/* <a href="#completed" className="block transition-colors text-sm">
                                 Completed Projects
-                            </a>
+                            </a> */}
                             <a href="#ongoing" className="block transition-colors text-sm">
                                 Ongoing Projects
                             </a>
-                            <a href="#testimonials" className="block transition-colors text-sm">
+                            {/* <a href="#testimonials" className="block transition-colors text-sm">
                                 Testimonials
-                            </a>
+                            </a> */}
                             <a href="#members" className="block transition-colors text-sm">
                                 Members
                             </a>

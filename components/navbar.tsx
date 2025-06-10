@@ -17,13 +17,13 @@ export function Navbar() {
 
 
     return (
-        <nav className="fixed top-0 w-full z-50 h-16 py-2">
+        <nav className="fixed top-0 w-full z-50 h-16 py-2 bg-background">
             {/* Navigation */}
             <div className="max-w-7xl mx-auto px-6 lg:px-24 h-full flex items-center justify-between">
-                <div className="text-xl h-full flex gap-2 items-center font-bold p-2 backdrop-blur-xl rounded bg-black/5    "><Image className="size-6" src={Logo} alt="Logo" /> OpenLabs</div>
+                <div className="text-xl h-full flex gap-2 items-center font-bold    "><Image className="size-6" src={Logo} alt="Logo" /> OpenLabs</div>
 
                 {/* Desktop Navigation */}
-                <div className="flex items-center h-full justify-between p-2 backdrop-blur-xl rounded bg-black/5    ">
+                <div className="flex items-center h-full justify-between    ">
                     <div className="hidden md:flex items-center space-x-6">
                         <a href="#about" className="font-medium  hover:underline transition-colors">
                             About
@@ -41,7 +41,7 @@ export function Navbar() {
                             Contact
                         </a>
                         <Toggle
-                            pressed={theme === 'dark'}
+                            pressed={theme === 'light'}
                             onPressedChange={toggleTheme}
                             aria-label="Toggle theme"
                             className="ml-2"

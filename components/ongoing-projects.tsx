@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
+import { Card } from "./ui/card";
 
 
 
@@ -28,40 +29,38 @@ const ongoingProjects = [
 
 export function OngoingProjects() {
     return (
-        <section id="ongoing" className="py-20 px-6 lg:px-24 ">
-            <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl font-semibold mb-4">Ongoing Projects</h2>
-                    <p className="">Join our latest initiatives and contribute</p>
+        <section id="ongoing" className="py-20 px-6 lg:px-24 flex justify-center">
+            <div className="max-w-7xl flex flex-col gap-4 justify-center">
+                <div className="flex justify-between items-center px-4">
+                    <div>
+                        <h2 className="text-4xl font-semibold mb-4">Ongoing Projects</h2>
+                        <p className="">Join our latest initiatives and contribute</p>
+                    </div>
+                    <Button
+                        className="px-8 py-3 text-lg transition-colors"
+                    >Join Now</Button>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {ongoingProjects.map((project, index) => (
-                        <div
+                        <Card
                             key={index}
                             className="relative  rounded-2xl shadow-sm p-6  hover:scale-105 transition-all duration-200"
                         >
-                            <img src={project.logo || "/placeholder.svg"} alt={`${project.name} logo`} className="w-16 h-16 mb-4" />
+                            <img src={project.logo || "/placeholder.svg"} alt={`${project.name} logo`} className="w-full mb-4" />
                             <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
                             <p className=" leading-relaxed mb-4">{project.description}</p>
 
                             <div className="mb-6">
-                                <div className=" rounded-full h-2 w-full">
+                                <div className=" rounded-full bg-secondary h-2 w-full">
                                     <div
-                                        className=" h-2 rounded-full transition-all duration-300"
+                                        className=" h-2 bg-black dark:bg-white rounded-full transition-all duration-300"
                                         style={{ width: `${project.progress}%` }}
                                     ></div>
                                 </div>
                                 <p className="text-sm mt-1">{project.progress}% complete</p>
                             </div>
-
-                            <Button
-                                variant="outline"
-                                className="absolute bottom-6 right-6"
-                            >
-                                Join Now
-                            </Button>
-                        </div>
+                        </Card>
                     ))}
                 </div>
             </div>

@@ -6,6 +6,7 @@ import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
+import { Card } from "./ui/card";
 
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -27,26 +28,26 @@ export function Contact() {
         <section id="contact" className="py-20 px-6 lg:px-24 ">
             <div className="max-w-xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-semibold text-black mb-4">Get in Touch</h2>
-                    <p className="text-gray-600">Questions? Collaborations? We'd love to hear from you.</p>
+                    <h2 className="text-4xl font-semibold mb-4">Get in Touch</h2>
+                    <p className="">Questions? Collaborations? We'd love to hear from you.</p>
                 </div>
 
-                <div className="bg-white/30 backdrop-blur-md border border-gray-200 rounded-2xl p-8">
+                <Card className=" border  rounded-2xl p-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                            <label htmlFor="name" className="block text-sm font-medium mb-2">
                                 Name
                             </label>
                             <Input
                                 id="name"
                                 placeholder="Your full name"
                                 required
-                                className="focus:border-black focus:ring-black"
+                                className=""
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                            <label htmlFor="email" className="block text-sm font-medium mb-2">
                                 Email
                             </label>
                             <Input
@@ -54,32 +55,25 @@ export function Contact() {
                                 type="email"
                                 placeholder="you@example.com"
                                 required
-                                className="focus:border-black focus:ring-black"
+                                className=""
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                            <label htmlFor="message" className="block text-sm font-medium ">
                                 Message
                             </label>
                             <Textarea
                                 id="message"
                                 placeholder="How can we help you?"
                                 required
-                                className="focus:border-black focus:ring-black min-h-[120px]"
+                                className=" min-h-[120px]"
                             />
-                        </div>
-
-                        <div className="flex items-center space-x-2">
-                            <Checkbox id="join" />
-                            <label htmlFor="join" className="text-sm text-gray-700">
-                                I want to join OpenLabs as a contributor
-                            </label>
                         </div>
 
                         <Button
                             type="submit"
-                            className="w-full bg-black text-white hover:bg-gray-800 py-3 disabled:bg-gray-400"
+                            className="w-full"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? (
@@ -92,7 +86,7 @@ export function Contact() {
                             )}
                         </Button>
                     </form>
-                </div>
+                </Card>
             </div>
         </section>
     )
