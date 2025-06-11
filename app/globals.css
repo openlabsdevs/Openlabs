@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@tailwind utilities;
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -154,7 +156,50 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+
+  /* Keyframes for pop-blob animation */
+  @keyframes pop-blob {
+    0% {
+      transform: scale(1);
+    }
+
+    33% {
+      transform: scale(1.2);
+    }
+
+    66% {
+      transform: scale(0.8);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Utility class for pop-blob animation */
+  .animate-pop-blob {
+    animation: pop-blob 5s infinite;
+  }
+
+  /* Custom blur utilities */
+  .blur-20 {
+    filter: blur(20px);
+  }
+
+  .blur-25 {
+    filter: blur(25px);
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+

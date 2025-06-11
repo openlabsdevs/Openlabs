@@ -5,16 +5,26 @@ import { Card } from "./ui/card"
 import Image from "next/image"
 import About1 from "../public/about 1.png"
 import About2 from "../public/about 2.png"
+import { AnimatedBlob } from "./animated-blob"
+
 
 export function About() {
     return (
         <section id="about" className="py-20 px-6 xl:px-40 flex gap-12">
+            <div className="absolute z-0 right-[25%] top-[1300px] ">
+                <AnimatedBlob
+                    className="rounded-xl opacity-45"
+                    firstBlobColor="bg-[#EB2933]"
+                    secondBlobColor="bg-secondary-foreground"
+                />
+
+            </div>
             <div className="hidden w-auto lg:flex flex-col gap-4">
                 <h1 className="text-3xl font-bold">Our Mission</h1>
                 <p className="text-wrap">To foster a vibrant community where innovation thrives through open collaboration and shared knowledge.</p>
                 <div><Image className="rounded-lg" src={About1} alt="About image" /></div>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 z-10">
 
                 <h1 className="text-3xl font-bold">About OpenLabs</h1>
                 <p className="text-wrap">OpenLabs is a dynamic, open-source collaboration society dedicated to pushing the boundaries of technology and innovation. We believe in the power of collective intelligence and the transformative potential of shared knowledge. Our community is a melting pot of diverse talents, from seasoned developers to enthusiastic beginners, all united by a passion for creating impactful solutions.</p>

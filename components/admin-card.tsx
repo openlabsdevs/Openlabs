@@ -56,19 +56,19 @@ export const AdminCard = ({
                 </div>
 
                 {/* Name */}
-                <h3 className="text-2xl font-bold text-white mb-2">{name}</h3>
+                <h3 className="text-2xl font-bold  mb-2">{name}</h3>
 
                 {/* Description */}
-                <p className="text-slate-300 text-sm leading-relaxed px-2">{description}</p>
+                <p className=" text-sm leading-relaxed px-2">{description}</p>
             </div>
 
             {/* Sliding Social Panel */}
             <div
-                className={`absolute inset-x-0 z-10 bottom-0 bg-black backdrop-blur-sm border-t border-purple-500/30 transform transition-all duration-500 ease-out ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                className={`absolute inset-x-0 z-10 bottom-0 bg-secondary  border-t transform transition-all duration-500 ease-out ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                     }`}
             >
                 <div className="p-6">
-                    <h4 className="text-white font-semibold mb-4 text-center">Connect with {name.split(' ')[0]}</h4>
+                    <h4 className=" font-semibold mb-4 text-center">Connect with {name.split(' ')[0]}</h4>
 
                     <div className="flex justify-center space-x-4">
                         {socialLinks.map(({ icon: Icon, url, label }) => (
@@ -77,18 +77,18 @@ export const AdminCard = ({
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative p-3 bg-slate-800/50 rounded-xl hover:bg-purple-600/20 transition-all duration-300 border border-slate-600/50 hover:border-purple-500/50"
+                                className="group relative p-3 rounded-xl transition-all duration-300 border "
                                 title={label}
                             >
-                                <Icon size={20} className="text-slate-300 group-hover:text-purple-300 transition-colors duration-300" />
-                                <ExternalLink size={12} className="absolute -top-1 -right-1 text-slate-400 group-hover:text-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                                <Icon size={20} className="  transition-colors duration-300" />
+                                <ExternalLink size={12} className="absolute -top-1 -right-1  opacity-0 group-hover:opacity-100 transition-all duration-300" />
                             </a>
                         ))}
                     </div>
 
                     {/* Additional Details */}
                     <div className="mt-4 text-center">
-                        <div className="inline-flex items-center space-x-2 text-xs text-slate-400">
+                        <div className="inline-flex items-center space-x-2 text-xs ">
                             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                             <span>Available for collaboration</span>
                         </div>

@@ -62,19 +62,13 @@ export function Navbar() {
 
             {/* Mobile Navigation */}
             {mobileMenuOpen && (
-                <div className="md:hidden mt-2 border-t backdrop-blur-xl rounded bg-black/5">
-                    <div className="px-6 py-4 space-y-4">
+                <div className="md:hidden mt-3 border border-secondary-foreground/20 backdrop-blur-xl rounded-lg bg-secondary-foreground/10" onClick={()=>setMobileMenuOpen(false)}>
+                    <div className="px-6 py-4 space-y-4 w-full">
                         <a href="#about" className="block font-medium">
                             About
                         </a>
-                        <a href="#completed" className="block font-medium">
-                            Completed Projects
-                        </a>
                         <a href="#ongoing" className="block font-medium">
-                            Ongoing Projects
-                        </a>
-                        <a href="#testimonials" className="block font-medium">
-                            Testimonials
+                            Projects
                         </a>
                         <a href="#members" className="block font-medium">
                             Members
@@ -82,9 +76,14 @@ export function Navbar() {
                         <a href="#contact" className="block font-medium">
                             Contact
                         </a>
-                        <Button variant="secondary" className="w-full">
-                            Connect
-                        </Button>
+                        <Toggle
+                            pressed={theme === 'light'}
+                            onPressedChange={toggleTheme}
+                            aria-label="Toggle theme"
+                            className="ml-2 w-full"
+                        >
+                            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+                        </Toggle>
                     </div>
                 </div>
             )}

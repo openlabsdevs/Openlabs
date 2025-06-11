@@ -1,12 +1,13 @@
 "use client";
 
-import { Loader2 } from "lucide-react";
+import { Link2, Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
 import { Card } from "./ui/card";
+import { AnimatedBlob } from "./animated-blob";
 
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -26,6 +27,14 @@ export function Contact() {
 
     return (
         <section id="contact" className="py-20 px-6 lg:px-24 ">
+            <div className="absolute z-0 right-[25%] -rotate-30">
+                <AnimatedBlob
+                    className="rounded-xl opacity-35 top-[400px]"
+                    firstBlobColor="bg-primary"
+                    secondBlobColor="bg-secondary"
+                />
+
+            </div>
             <div className="max-w-xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-semibold mb-4">Get in Touch</h2>
@@ -86,6 +95,7 @@ export function Contact() {
                             )}
                         </Button>
                     </form>
+                    <Button variant={"secondary"} className="w-full mt-4"><Link2/> Donate</Button>
                 </Card>
             </div>
         </section>

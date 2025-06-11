@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedBlob } from "./animated-blob";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 
@@ -30,15 +31,23 @@ const ongoingProjects = [
 export function OngoingProjects() {
     return (
         <section id="ongoing" className="py-20 px-6 lg:px-24 flex justify-center">
-            <div className="max-w-7xl flex flex-col gap-4 justify-center">
+            <div className="absolute z-0 left-[15%] top-[2400px] rotate-90">
+                <AnimatedBlob
+                    className="rounded-xl opacity-20"
+                    firstBlobColor="bg-[#EB2933]"
+                    secondBlobColor="bg-secondary-foreground"
+                />
+
+            </div>
+            <div className="max-w-7xl flex flex-col gap-4 justify-center z-10">
                 <div className="flex justify-between items-center px-4">
                     <div>
                         <h2 className="text-4xl font-semibold mb-4">Ongoing Projects</h2>
                         <p className="">Join our latest initiatives and contribute</p>
                     </div>
                     <Button
-                        className="px-8 py-3 text-lg transition-colors"
-                    >Join Now</Button>
+                        className="sm:px-8 sm:py-3 sm:text-lg transition-colors"
+                    >Join <p className="hidden sm:inline">Now</p></Button>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
