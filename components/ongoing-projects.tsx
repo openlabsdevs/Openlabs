@@ -3,6 +3,7 @@
 import { AnimatedBlob } from "./animated-blob";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 
 
 
@@ -45,9 +46,16 @@ export function OngoingProjects() {
                         <h2 className="text-4xl font-semibold mb-4">Ongoing Projects</h2>
                         <p className="">Join our latest initiatives and contribute</p>
                     </div>
-                    <Button
-                        className="sm:px-8 sm:py-3 sm:text-lg transition-colors"
-                    >Join <p className="hidden sm:inline">Now</p></Button>
+                    <Dialog>
+                        <DialogTrigger>
+                            <Button
+                                className="sm:px-8 sm:py-3 sm:text-lg transition-colors"
+                            >Join <p className="hidden sm:inline">Now</p></Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            Hello
+                        </DialogContent>
+                    </Dialog>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

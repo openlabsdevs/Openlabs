@@ -5,7 +5,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'OpenLabs',
-  description: 'Created Bashar Khan',
+  description: 'Open Source Community created Bashar Khan',
   icons: {
     icon: './favicon.ico',
   },

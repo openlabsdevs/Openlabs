@@ -15,6 +15,17 @@ export function Navbar() {
 
     const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
+    const scroll = (id: string) => {
+        const targetElement = document.getElementById(id);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+            });
+        }
+    }
+
+
 
     return (
         <nav className="fixed top-0 w-full z-50 h-16 py-2 bg-background">
@@ -25,19 +36,16 @@ export function Navbar() {
                 {/* Desktop Navigation */}
                 <div className="flex items-center h-full justify-between    ">
                     <div className="hidden md:flex items-center space-x-6">
-                        <a href="#about" className="font-medium  hover:underline transition-colors">
+                        <a onClick={() => scroll("about")} className="font-medium  hover:underline transition-colors hover:cursor-pointer">
                             About
                         </a>
-                        <a
-                            href="#completed"
-                            className="font-medium  hover:underline transition-colors"
-                        >
+                        <a onClick={() => scroll("ongoing")} className="font-medium  hover:underline transition-colors hover:cursor-pointer">
                             Projects
                         </a>
-                        <a href="#members" className="font-medium hover:underline transition-colors">
+                        <a onClick={() => scroll("members")} className="font-medium hover:underline transition-colors hover:cursor-pointer">
                             Members
                         </a>
-                        <a href="#contact" className="font-medium hover:underline transition-colors">
+                        <a onClick={() => scroll("contact")} className="font-medium hover:underline transition-colors hover:cursor-pointer">
                             Contact
                         </a>
                         <Toggle
@@ -62,7 +70,7 @@ export function Navbar() {
 
             {/* Mobile Navigation */}
             {mobileMenuOpen && (
-                <div className="md:hidden mt-3 border border-secondary-foreground/20 backdrop-blur-xl rounded-lg bg-secondary-foreground/10" onClick={()=>setMobileMenuOpen(false)}>
+                <div className="md:hidden mt-3 border border-secondary-foreground/20 backdrop-blur-xl rounded-lg bg-secondary-foreground/10" onClick={() => setMobileMenuOpen(false)}>
                     <div className="px-6 py-4 space-y-4 w-full">
                         <a href="#about" className="block font-medium">
                             About

@@ -13,20 +13,11 @@ import { Hero } from "@/components/hero"
 
 
 
-
-
-
-
-
-
-
-
-
 export default function OpenLabsLanding() {
 
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-hidden">
       {/* Navbar */}
       <Navbar />
 
