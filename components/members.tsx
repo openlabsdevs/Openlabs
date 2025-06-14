@@ -87,14 +87,14 @@ export function Members() {
                 {/* Regular Members Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
                     {members.map((member, index) => (
-                        <div key={index} className="relative group flex justify-center items-center">
+                        <div key={index} className="relative group flex justify-center items-center cursor-default">
                             <img
                                 src={member.photo || "/placeholder.svg"}
                                 alt={member.name}
                                 className="w-28 h-w-28 rounded-full border-2  transition "
                             />
-                            <div className="absolute inset-0  rounded-full hidden group-hover:flex items-center justify-center transition-all">
-                                <span className=" text-sm font-medium">{member.name}</span>
+                            <div className="absolute inset-0 rounded-full hidden group-hover:flex items-center justify-center transition-all duration-500">
+                                <span className="rounded-lg bg-secondary p-1 text-sm font-light ">{member.name}</span>
                             </div>
                         </div>
                     ))}

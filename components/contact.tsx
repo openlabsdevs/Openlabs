@@ -8,6 +8,7 @@ import { Textarea } from "./ui/textarea";
 import { useState } from "react";
 import { Card } from "./ui/card";
 import { AnimatedBlob } from "./animated-blob";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -95,7 +96,20 @@ export function Contact() {
                             )}
                         </Button>
                     </form>
-                    <Button variant={"secondary"} className="w-full mt-4"><Link2/> Donate</Button>
+                    <Dialog>
+                        <DialogTrigger className="w-full" asChild>
+                            <Button variant={"secondary"} className="w-full mt-4"><Link2 /> Support</Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogTitle className="text-xl">Support OpenLabs</DialogTitle>
+                            <DialogDescription>Your contribution helps us empower more students, sustain impactful open-source projects, and expand our community initiatives. Every donation fuels innovation and growth.</DialogDescription>
+                            <div className="py-4 pl-2 border-r-2 border-l-2 rounded-xl border-secondary bg-primary/10 dark:bg-primary/2">
+                                Donate and make a difference.
+                            </div>
+                            <Button variant={"secondary"}>Donate through Strips</Button>
+                            <Button variant={"secondary"}>Donate through wallet</Button>
+                        </DialogContent>
+                    </Dialog>
                 </Card>
             </div>
         </section>

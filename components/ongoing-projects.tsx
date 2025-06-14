@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedBlob } from "./animated-blob";
+import GetStarted from "./get-started";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
@@ -47,14 +48,12 @@ export function OngoingProjects() {
                         <p className="">Join our latest initiatives and contribute</p>
                     </div>
                     <Dialog>
-                        <DialogTrigger>
+                        <DialogTrigger asChild>
                             <Button
                                 className="sm:px-8 sm:py-3 sm:text-lg transition-colors"
                             >Join <p className="hidden sm:inline">Now</p></Button>
                         </DialogTrigger>
-                        <DialogContent>
-                            Hello
-                        </DialogContent>
+                        <GetStarted />
                     </Dialog>
                 </div>
 

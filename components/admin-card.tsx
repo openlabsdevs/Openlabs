@@ -77,7 +77,7 @@ export const AdminCard = ({
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative p-3 rounded-xl transition-all duration-300 border "
+                                className="group relative p-3 rounded-xl transition-all duration-300 border border-primary-foreground/50"
                                 title={label}
                             >
                                 <Icon size={20} className="  transition-colors duration-300" />

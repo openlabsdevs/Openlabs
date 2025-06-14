@@ -2,7 +2,7 @@
 
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Logo from "../public/Logo.png";
 import { useTheme } from "next-themes";
@@ -10,8 +10,13 @@ import { Toggle } from "./ui/toggle";
 
 
 export function Navbar() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
@@ -48,14 +53,16 @@ export function Navbar() {
                         <a onClick={() => scroll("contact")} className="font-medium hover:underline transition-colors hover:cursor-pointer">
                             Contact
                         </a>
-                        <Toggle
-                            pressed={theme === 'light'}
-                            onPressedChange={toggleTheme}
-                            aria-label="Toggle theme"
-                            className="ml-2"
-                        >
-                            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-                        </Toggle>
+                        {mounted && (
+                            <Toggle
+                                pressed={theme === 'light'}
+                                onPressedChange={toggleTheme}
+                                aria-label="Toggle theme"
+                                className="ml-2"
+                            >
+                                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+                            </Toggle>
+                        )}
                     </div>
 
                     <div className="flex items-center space-x-4">
@@ -84,14 +91,16 @@ export function Navbar() {
                         <a href="#contact" className="block font-medium">
                             Contact
                         </a>
-                        <Toggle
-                            pressed={theme === 'light'}
-                            onPressedChange={toggleTheme}
-                            aria-label="Toggle theme"
-                            className="ml-2 w-full"
-                        >
-                            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-                        </Toggle>
+                        {mounted && (
+                            <Toggle
+                                pressed={theme === 'light'}
+                                onPressedChange={toggleTheme}
+                                aria-label="Toggle theme"
+                                className="ml-2 w-full"
+                            >
+                                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+                            </Toggle>
+                        )}
                     </div>
                 </div>
             )}
