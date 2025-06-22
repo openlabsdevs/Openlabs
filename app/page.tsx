@@ -1,4 +1,3 @@
-
 import { About } from "@/components/about"
 import { CompletedProjects } from "@/components/completed-projects"
 import { OngoingProjects } from "@/components/ongoing-projects"
@@ -17,7 +16,7 @@ export default function OpenLabsLanding() {
 
 
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden overflow-y-auto">
       {/* Navbar */}
       <Navbar />
 
@@ -42,8 +41,6 @@ export default function OpenLabsLanding() {
       {/* Contact Form Section */}
       <Contact />
 
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }

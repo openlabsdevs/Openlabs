@@ -7,12 +7,14 @@ import Image from "next/image";
 import Logo from "../public/Logo.png";
 import { useTheme } from "next-themes";
 import { Toggle } from "./ui/toggle";
+import { useRouter } from "next/navigation";
 
 
 export function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
+    const router = useRouter();
 
     useEffect(() => {
         setMounted(true);
@@ -33,10 +35,10 @@ export function Navbar() {
 
 
     return (
-        <nav className="fixed top-0 w-full z-50 h-16 py-2 bg-background">
+        <nav className="fixed top-0 w-screen z-50 h-16 py-2 bg-background">
             {/* Navigation */}
             <div className="max-w-7xl mx-auto px-6 lg:px-24 h-full flex items-center justify-between">
-                <div className="text-xl h-full flex gap-2 items-center font-bold    "><Image className="size-6" src={Logo} alt="Logo" /> OpenLabs</div>
+                <div className="text-xl h-full flex gap-2 items-center font-bold" onClick={() => router.push("/")}><Image className="size-6" src={Logo} alt="Logo" /> OpenLabs</div>
 
                 {/* Desktop Navigation */}
                 <div className="flex items-center h-full justify-between    ">

@@ -32,12 +32,12 @@ export const AdminCard = ({
 
     return (
         <Card
-            className="relative  rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105"
+            className="relative rounded-2xl overflow-hidden max-w-full overflow-x-hidden transform transition-all duration-300 hover:scale-105"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Main Card Content */}
-            <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-center">
+            <div className="relative z-10 p-4 sm:p-8 h-full flex flex-col items-center justify-center text-center w-full max-w-full overflow-x-hidden">
                 {/* Role Badge */}
                 <Badge variant={"secondary"} className='absolute top-6 right-6'>
                     {role}

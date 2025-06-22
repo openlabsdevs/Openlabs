@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from "next-themes";
+import { Footer } from "@/components/footer";
 
 import './globals.css'
+import { Navbar } from '@/components/navbar';
 
 export const metadata: Metadata = {
   title: 'OpenLabs',
@@ -20,7 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

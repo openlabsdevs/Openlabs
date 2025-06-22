@@ -30,7 +30,7 @@ export function Contact() {
         <section id="contact" className="py-20 px-6 lg:px-24 ">
             <div className="absolute z-0 right-[25%] -rotate-30">
                 <AnimatedBlob
-                    className="rounded-xl opacity-35 top-[400px]"
+                    className="rounded-xl opacity-35 top-[400px] overflow-hidden"
                     firstBlobColor="bg-primary"
                     secondBlobColor="bg-secondary"
                 />

@@ -11,9 +11,9 @@ import { AnimatedBlob } from "./animated-blob"
 export function About() {
     return (
         <section id="about" className="py-20 px-6 xl:px-40 flex gap-12">
-            <div className="absolute z-0 right-[25%] top-[1300px] ">
+            <div className="absolute z-0 right-[30%] -rotate-45">
                 <AnimatedBlob
-                    className="rounded-xl opacity-45"
+                    className="rounded-xl opacity-45 top-[100px] overflow-hidden"
                     firstBlobColor="bg-[#EB2933]"
                     secondBlobColor="bg-secondary-foreground"
                 />
