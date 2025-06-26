@@ -33,14 +33,6 @@ const ongoingProjects = [
 export function OngoingProjects() {
     return (
         <section id="ongoing" className="py-20 px-6 lg:px-24 flex justify-center">
-            <div className="absolute z-0 left-[20%]">
-                <AnimatedBlob
-                    className="rounded-xl opacity-20 top-[5px] rotate-90 overflow-hidden"
-                    firstBlobColor="bg-[#EB2933]"
-                    secondBlobColor="bg-secondary-foreground"
-                />
-
-            </div>
             <div className="max-w-7xl flex flex-col gap-4 justify-center z-10">
                 <div className="flex justify-between items-center px-4">
                     <div>

@@ -28,14 +28,6 @@ export function Contact() {
 
     return (
         <section id="contact" className="py-20 px-6 lg:px-24 ">
-            <div className="absolute z-0 right-[25%] -rotate-30">
-                <AnimatedBlob
-                    className="rounded-xl opacity-35 top-[400px] overflow-hidden"
-                    firstBlobColor="bg-primary"
-                    secondBlobColor="bg-secondary"
-                />
-
-            </div>
             <div className="max-w-xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-semibold mb-4">Get in Touch</h2>
@@ -106,7 +98,7 @@ export function Contact() {
                             <div className="py-4 pl-2 border-r-2 border-l-2 rounded-xl border-secondary bg-primary/10 dark:bg-primary/2">
                                 Donate and make a difference.
                             </div>
-                            <Button variant={"secondary"}>Donate through Strips</Button>
+                            <Button variant={"secondary"}>Donate through bmac</Button>
                             <Button variant={"secondary"}>Donate through wallet</Button>
                         </DialogContent>
                     </Dialog>

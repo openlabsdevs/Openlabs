@@ -11,14 +11,6 @@ import { AnimatedBlob } from "./animated-blob"
 export function About() {
     return (
         <section id="about" className="py-20 px-6 xl:px-40 flex gap-12">
-            <div className="absolute z-0 right-[30%] -rotate-45">
-                <AnimatedBlob
-                    className="rounded-xl opacity-45 top-[100px] overflow-hidden"
-                    firstBlobColor="bg-[#EB2933]"
-                    secondBlobColor="bg-secondary-foreground"
-                />
-
-            </div>
             <div className="hidden w-auto lg:flex flex-col gap-4">
                 <h1 className="text-4xl font-bold">Our Mission</h1>
                 <p className="text-wrap">To foster a vibrant community where innovation thrives through open collaboration and shared knowledge.</p>

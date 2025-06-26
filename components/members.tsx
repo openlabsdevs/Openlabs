@@ -37,14 +37,6 @@ export function Members() {
 
     return (
         <section id="members" className="py-20 px-6 lg:px-24 ">
-            <div className="absolute z-0 left-[40%] -rotate-25">
-                <AnimatedBlob
-                    className="rounded-xl opacity-45 top-[400px] overflow-hidden"
-                    firstBlobColor="bg-[#EB2933]"
-                    secondBlobColor="bg-secondary-foreground"
-                />
-
-            </div>
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-semibold mb-4">Members</h2>
