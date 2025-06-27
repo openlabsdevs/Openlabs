@@ -16,10 +16,7 @@ export default function OpenLabsLanding() {
 
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden overflow-y-auto">
-      {/* Navbar */}
-      <Navbar />
-
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Hero />
 

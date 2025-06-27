@@ -8,6 +8,7 @@ import Logo from "../public/Logo.png";
 import { useTheme } from "next-themes";
 import { Toggle } from "./ui/toggle";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 
 export function Navbar() {
@@ -31,7 +32,12 @@ export function Navbar() {
 
 
     return (
-        <nav className="fixed top-0 w-screen z-50 h-16 py-2 bg-background">
+        <motion.nav
+            initial={{ y: -60, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="fixed top-0 w-screen z-60 h-16 py-2 bg-background"
+        >
                 {/* Navigation */}
                 <div className="max-w-7xl mx-auto px-6 lg:px-24 h-full flex items-center justify-between">
                     <div className="text-xl h-full flex gap-2 items-center font-bold cursor-pointer" onClick={() => router.push("/")}><Image className="size-6" src={Logo} alt="Logo" /> OpenLabs</div>
@@ -98,6 +104,6 @@ export function Navbar() {
                         </div>
                     </div>
                 )}
-        </nav>
+        </motion.nav>
     )
 }

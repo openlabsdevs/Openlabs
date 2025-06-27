@@ -9,11 +9,10 @@ import { useState } from "react";
 import { Card } from "./ui/card";
 import { AnimatedBlob } from "./animated-blob";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { AnimateOnScroll, FadeIn } from "@/components/ui/motion";
 
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
-
-
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -23,87 +22,89 @@ export function Contact() {
         setIsSubmitting(false)
     }
 
-
-
-
     return (
-        <section id="contact" className="py-20 px-6 lg:px-24 ">
-            <div className="max-w-xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl font-semibold mb-4">Get in Touch</h2>
-                    <p className="">Questions? Collaborations? We'd love to hear from you.</p>
-                </div>
-
-                <Card className=" border  rounded-2xl p-8">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-medium mb-2">
-                                Name
-                            </label>
-                            <Input
-                                id="name"
-                                placeholder="Your full name"
-                                required
-                                className=""
-                            />
+        <div id="contact">
+            <AnimateOnScroll className="py-20 px-6 lg:px-24 ">
+                <FadeIn delay={0.1}>
+                    <div className="max-w-xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-4xl font-semibold mb-4">Get in Touch</h2>
+                            <p className="">Questions? Collaborations? We'd love to hear from you.</p>
                         </div>
+                        <FadeIn delay={0.2}>
+                            <Card className=" border  rounded-2xl p-8">
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div>
+                                        <label htmlFor="name" className="block text-sm font-medium mb-2">
+                                            Name
+                                        </label>
+                                        <Input
+                                            id="name"
+                                            placeholder="Your full name"
+                                            required
+                                            className=""
+                                        />
+                                    </div>
 
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-2">
-                                Email
-                            </label>
-                            <Input
-                                id="email"
-                                type="email"
-                                placeholder="you@example.com"
-                                required
-                                className=""
-                            />
-                        </div>
+                                    <div>
+                                        <label htmlFor="email" className="block text-sm font-medium mb-2">
+                                            Email
+                                        </label>
+                                        <Input
+                                            id="email"
+                                            type="email"
+                                            placeholder="you@example.com"
+                                            required
+                                            className=""
+                                        />
+                                    </div>
 
-                        <div>
-                            <label htmlFor="message" className="block text-sm font-medium ">
-                                Message
-                            </label>
-                            <Textarea
-                                id="message"
-                                placeholder="How can we help you?"
-                                required
-                                className=" min-h-[120px]"
-                            />
-                        </div>
+                                    <div>
+                                        <label htmlFor="message" className="block text-sm font-medium ">
+                                            Message
+                                        </label>
+                                        <Textarea
+                                            id="message"
+                                            placeholder="How can we help you?"
+                                            required
+                                            className=" min-h-[120px]"
+                                        />
+                                    </div>
 
-                        <Button
-                            type="submit"
-                            className="w-full"
-                            disabled={isSubmitting}
-                        >
-                            {isSubmitting ? (
-                                <>
-                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                    Sending...
-                                </>
-                            ) : (
-                                "Send Message"
-                            )}
-                        </Button>
-                    </form>
-                    <Dialog>
-                        <DialogTrigger className="w-full" asChild>
-                            <Button variant={"secondary"} className="w-full mt-4"><Link2 /> Support</Button>
-                        </DialogTrigger>
-                        <DialogContent>
-                            <DialogTitle className="text-xl">Support OpenLabs</DialogTitle>
-                            <DialogDescription>Your contribution helps us empower more students, sustain impactful open-source projects, and expand our community initiatives. Every donation fuels innovation and growth.</DialogDescription>
-                            <div className="py-4 pl-2 border-r-2 border-l-2 rounded-xl border-secondary bg-primary/10 dark:bg-primary/2">
-                                Donate and make a difference.
-                            </div>
-                            <Button variant={"secondary"}>Donate through bmac</Button>
-                            <Button variant={"secondary"}>Donate through wallet</Button>
-                        </DialogContent>
-                    </Dialog>
-                </Card>
-            </div>
-        </section>
+                                    <Button
+                                        type="submit"
+                                        className="w-full"
+                                        disabled={isSubmitting}
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            "Send Message"
+                                        )}
+                                    </Button>
+                                </form>
+                                <Dialog>
+                                    <DialogTrigger className="w-full" asChild>
+                                        <Button variant={"secondary"} className="w-full mt-4"><Link2 /> Support</Button>
+                                    </DialogTrigger>
+                                    <DialogContent>
+                                        <DialogTitle className="text-xl">Support OpenLabs</DialogTitle>
+                                        <DialogDescription>Your contribution helps us empower more students, sustain impactful open-source projects, and expand our community initiatives. Every donation fuels innovation and growth.</DialogDescription>
+                                        <div className="py-4 pl-2 border-r-2 border-l-2 rounded-xl border-secondary bg-primary/10 dark:bg-primary/2">
+                                            Donate and make a difference.
+                                        </div>
+                                        <Button variant={"secondary"}>Donate through bmac</Button>
+                                        <Button variant={"secondary"}>Donate through wallet</Button>
+                                    </DialogContent>
+                                </Dialog>
+                            </Card>
+                        </FadeIn>
+                    </div>
+                </FadeIn>
+            </AnimateOnScroll>
+        </div>
     )
 }
