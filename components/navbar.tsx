@@ -81,16 +81,16 @@ export function Navbar() {
                 {mobileMenuOpen && (
                     <div className="md:hidden mt-3 border border-secondary-foreground/20 backdrop-blur-xl rounded-lg bg-secondary-foreground/10" onClick={() => setMobileMenuOpen(false)}>
                         <div className="px-6 py-4 space-y-4 w-full">
-                            <a href="#about" className="block font-medium">
+                            <a onClick={() => scroll("about")} className="block font-medium">
                                 About
                             </a>
-                            <a href="#ongoing" className="block font-medium">
+                            <a onClick={() => scroll("ongoing")} className="block font-medium">
                                 Projects
                             </a>
-                            <a href="#members" className="block font-medium">
+                            <a onClick={() => scroll("members")} className="block font-medium">
                                 Members
                             </a>
-                            <a href="#contact" className="block font-medium">
+                            <a onClick={() => scroll("contact")} className="block font-medium">
                                 Contact
                             </a>
                             <Toggle
