@@ -1,6 +1,6 @@
 "use client";
 
-import { Link2, Loader2 } from "lucide-react";
+import { Link2, Loader2, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
@@ -96,8 +96,7 @@ export function Contact() {
                                         <div className="py-4 pl-2 border-r-2 border-l-2 rounded-xl border-secondary bg-primary/10 dark:bg-primary/2">
                                             Donate and make a difference.
                                         </div>
-                                        <Button variant={"secondary"}>Donate through bmac</Button>
-                                        <Button variant={"secondary"}>Donate through wallet</Button>
+                                        <Button variant={"secondary"}><SquareArrowOutUpRight/> Donate</Button>
                                     </DialogContent>
                                 </Dialog>
                             </Card>
