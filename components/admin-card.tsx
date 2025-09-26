@@ -58,8 +58,6 @@ export const AdminCard = ({
                 {/* Name */}
                 <h3 className="text-2xl font-bold  mb-2">{name}</h3>
 
-                {/* Description */}
-                <p className=" text-sm leading-relaxed px-2">{description}</p>
             </div>
 
             {/* Sliding Social Panel */}

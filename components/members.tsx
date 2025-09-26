@@ -9,8 +9,8 @@ import { AnimateOnScroll, FadeIn } from "@/components/ui/motion";
 
 const leadMembers = [
     {
-        name: "Alex Rivera",
-        role: "President",
+        name: "Bashar Khan",
+        role: "Founder",
         bio: "Full-stack developer passionate about open-source innovation",
         photo: "/placeholder.svg?height=96&width=96",
     },

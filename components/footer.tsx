@@ -43,15 +43,21 @@ export function Footer() {
                             <div>
                                 <h3 className="text-base font-semibold  mb-2">Connect with Us</h3>
                                 <div className="flex space-x-2">
-                                    <Button variant="ghost" size="sm">
-                                        <Github className="h-5 w-5" />
-                                    </Button>
-                                    <Button variant="ghost" size="sm">
-                                        <Twitter className="h-5 w-5" />
-                                    </Button>
-                                    <Button variant="ghost" size="sm">
-                                        <MessageCircle className="h-5 w-5" />
-                                    </Button>
+                                    <a href="https://github.com/openlabsdevs" target="_blank" rel="noopener noreferrer">
+                                        <Button variant="ghost" size="sm">
+                                            <Github className="h-5 w-5" />
+                                        </Button>
+                                    </a>
+                                    <a href="https://x.com/openlabsdevs" target="_blank" rel="noopener noreferrer">
+                                        <Button variant="ghost" size="sm">
+                                            <Twitter className="h-5 w-5" />
+                                        </Button>
+                                    </a>
+                                    <a href="https://chat.whatsapp.com/JZ0XiEVQPQAB6bLNc6znxZ?mode=ems_wa_t" target="_blank" rel="noopener noreferrer">
+                                        <Button variant="ghost" size="sm">
+                                            <MessageCircle className="h-5 w-5" />
+                                        </Button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

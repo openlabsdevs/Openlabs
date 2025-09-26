@@ -11,21 +11,21 @@ import { AnimateOnScroll, FadeIn } from "@/components/ui/motion";
 
 const ongoingProjects = [
     {
-        name: "HealthHub",
-        description: "Digital health platform for tracking wellness metrics and connecting with healthcare providers.",
-        progress: 75,
+        name: "Snap-Form",
+        description: "Snap-form is a modern, agentic AI form builder that lets you create, edit, and analyze forms.",
+        progress: 20,
         logo: "/placeholder.svg?height=64&width=64",
     },
     {
-        name: "CodeMentor",
-        description: "AI-powered coding assistant that provides personalized learning paths and code reviews.",
-        progress: 45,
+        name: "Aura",
+        description: "Aura is a Web3-native freelancing marketplace powered by Solana.",
+        progress: 5,
         logo: "/placeholder.svg?height=64&width=64",
     },
     {
-        name: "GreenChain",
-        description: "Blockchain-based supply chain transparency platform for sustainable business practices.",
-        progress: 60,
+        name: "Hacklog",
+        description: "Platform to create and manage Compititive Programming Contests with ease.",
+        progress: 5,
         logo: "/placeholder.svg?height=64&width=64",
     },
 ]
@@ -56,13 +56,17 @@ export function OngoingProjects() {
                                 {ongoingProjects.map((project, index) => (
                                     <Card
                                         key={index}
-                                        className="relative  rounded-2xl shadow-sm p-6  hover:scale-105 transition-all duration-200"
+                                        className="flex flex-col justify-between items-stretch relative  rounded-2xl shadow-sm p-6  hover:scale-105 transition-all duration-200"
                                     >
-                                        <img src={project.logo || "/placeholder.svg"} alt={`${project.name} logo`} className="w-full mb-4" />
-                                        <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-                                        <p className=" leading-relaxed mb-4">{project.description}</p>
+                                        <div>
+                                            <div className=" aspect-video mb-4 rounded-md">
+                                                <img src={project.logo || "/placeholder.svg"} alt={`${project.name} logo`} className="w-full h-full object-cover rounded-md" />
+                                            </div>
+                                            <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+                                            <p className=" leading-relaxed mb-4">{project.description}</p>
 
-                                        <div className="mb-6">
+                                        </div>
+                                        <div className="">
                                             <div className=" rounded-full bg-secondary h-2 w-full">
                                                 <div
                                                     className=" h-2 bg-black dark:bg-white rounded-full transition-all duration-300"
