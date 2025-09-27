@@ -10,16 +10,40 @@ import { Card } from "./ui/card";
 import { AnimatedBlob } from "./animated-blob";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { AnimateOnScroll, FadeIn } from "@/components/ui/motion";
+import { toast } from "sonner";
 
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsSubmitting(true)
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 2000))
-        setIsSubmitting(false)
+
+        const formData = new FormData(e.currentTarget);
+        const name = formData.get('name') as string;
+        const email = formData.get('email') as string;
+        const message = formData.get('message') as string;
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            if (response.ok) {
+                toast.success('Message sent successfully!');
+            } else {
+                toast.error('Failed to send message.');
+            }
+        } catch (error) {
+            toast.error('Error submitting form.');
+            console.error('Error submitting form:', error);
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
     return (
@@ -40,6 +64,7 @@ export function Contact() {
                                         </label>
                                         <Input
                                             id="name"
+                                            name="name"
                                             placeholder="Your full name"
                                             required
                                             className=""
@@ -47,11 +72,12 @@ export function Contact() {
                                     </div>
 
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium mb-2">
+                                        <label htmlFor="email" className="block text--medium mb-2">
                                             Email
                                         </label>
                                         <Input
                                             id="email"
+                                            name="email"
                                             type="email"
                                             placeholder="you@example.com"
                                             required
@@ -65,6 +91,7 @@ export function Contact() {
                                         </label>
                                         <Textarea
                                             id="message"
+                                            name="message"
                                             placeholder="How can we help you?"
                                             required
                                             className=" min-h-[120px]"
@@ -96,7 +123,7 @@ export function Contact() {
                                         <div className="py-4 pl-2 border-r-2 border-l-2 rounded-xl border-secondary bg-primary/10 dark:bg-primary/2">
                                             Donate and make a difference.
                                         </div>
-                                        <Button variant={"secondary"}><SquareArrowOutUpRight/> Donate</Button>
+                                        <Button variant={"secondary"}><a className="flex items-center gap-2" href="https://buymeacoffee.com/openlabsdevs" target="_blank" rel="noopener noreferrer"><SquareArrowOutUpRight /> Donate</a></Button>
                                     </DialogContent>
                                 </Dialog>
                             </Card>

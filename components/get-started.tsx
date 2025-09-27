@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "./ui/button";
 import { DialogContent, DialogDescription, DialogTitle } from "./ui/dialog";
 import { ExternalLink } from "lucide-react";
@@ -20,7 +21,13 @@ export default function GetStarted() {
                     Join the community. Build. Learn. Lead.
                 </div>
             </div>
-            <Button><ExternalLink /> Apply</Button>
+
+            <Button >
+                <Link href={"/form"} className="flex items-center gap-2">
+                    <ExternalLink />
+                    ApplyLink
+                </Link>
+            </Button>
         </DialogContent>
     )
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from "next-themes";
 import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 import './globals.css'
 import { Navbar } from '@/components/navbar';
@@ -26,6 +27,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <Toaster />
           </div>
         </ThemeProvider>
       </body>

@@ -6,8 +6,6 @@ import { Badge } from './ui/badge';
 interface UserAdminCardProps {
     name: string;
     role: string;
-    description: string;
-    avatar: string;
     github?: string;
     twitter?: string;
     linkedin?: string;
@@ -16,8 +14,6 @@ interface UserAdminCardProps {
 export const AdminCard = ({
     name,
     role,
-    description,
-    avatar,
     github,
     twitter,
     linkedin
@@ -29,6 +25,9 @@ export const AdminCard = ({
         { icon: Twitter, url: twitter, label: 'Twitter' },
         { icon: Linkedin, url: linkedin, label: 'LinkedIn' },
     ].filter(link => link.url);
+
+    const avatarUrl = github ? `https://avatars.githubusercontent.com/${github.substring(github.lastIndexOf('/') + 1)}` : "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg";
+
 
     return (
         <Card
@@ -47,7 +46,7 @@ export const AdminCard = ({
                 <div className="relative mb-6">
                     <div className="w-24 h-24 rounded-full overflow-hidden border-4  shadow-lg">
                         <img
-                            src={avatar}
+                            src={avatarUrl}
                             alt={name}
                             className="w-full h-full object-cover"
                         />

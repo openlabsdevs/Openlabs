@@ -11,20 +11,23 @@ const leadMembers = [
     {
         name: "Bashar Khan",
         role: "Founder",
-        bio: "Full-stack developer passionate about open-source innovation",
-        photo: "/placeholder.svg?height=96&width=96",
+        github:"https://github.com/basharkhan7776",
+        twitter:"https://x.com/_Bashar_khan_",
+        linkedin:"https://www.linkedin.com/in/basharkhan7776/"
     },
     {
-        name: "Jordan Kim",
-        role: "Tech Lead",
-        bio: "Systems architect with expertise in scalable web applications",
-        photo: "/placeholder.svg?height=96&width=96",
+        name: "Syed Zakaria Rizvi",
+        role: "Co-Founder",
+        github:"https://github.com/SyedZakariaRizvi",
+        twitter:"https://x.com/sy_zakr",
+        linkedin:"https://www.linkedin.com/in/syed-zakaria-rizvi-428673278/"
     },
     {
-        name: "Taylor Swift",
+        name: "Sahil Ansari",
         role: "Community Manager",
-        bio: "Advocate for inclusive tech communities and mentorship",
-        photo: "/placeholder.svg?height=96&width=96",
+        github:"https://github.com/sahilansari189",
+        twitter:"https://x.com/sahilansari189",
+        linkedin:"https://www.linkedin.com/in/sahilansari189/"
     },
 ]
 
@@ -49,32 +52,15 @@ export function Members() {
                         {/* Lead Members */}
                         <FadeIn delay={0.2}>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                                {/* {leadMembers.map((member, index) => (
-                                    <Card
-                                        key={index}
-                                        className="relative rounded-2xl shadow p-6 flex flex-col items-center"
-                                    >
-                                        <Badge variant={"secondary"} className="absolute top-4 right-4  text-xs">{member.role}</Badge>
-                                        <img
-                                            src={member.photo || "/placeholder.svg"}
-                                            alt={member.name}
-                                            className="w-24 h-24 rounded-full border-2  mb-4"
-                                        />
-                                        <h3 className="text-xl font-semibold  mb-2">{member.name}</h3>
-                                        <p className="text-sm  text-center">{member.bio}</p>
-                                    </Card>
-                                ))} */}
 
                                 {leadMembers.map((member, index) => (
                                     <AdminCard
                                         key={index}
                                         name={member.name}
                                         role={member.role}
-                                        description={member.bio}
-                                        avatar={member.photo}
-                                        github="https://github.com/sarahchen"
-                                        twitter="https://twitter.com/sarahchen"
-                                        linkedin="https://linkedin.com/in/sarahchen"
+                                        github={member.github}
+                                        twitter={member.twitter}
+                                        linkedin={member.linkedin}
                                     />
                                 ))}
 
@@ -82,7 +68,7 @@ export function Members() {
                         </FadeIn>
 
                         {/* Regular Members Grid */}
-                        <FadeIn delay={0.3}>
+                        {/* <FadeIn delay={0.3}>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
                                 {members.map((member, index) => (
                                     <div key={index} className="relative group flex justify-center items-center cursor-default">
@@ -97,7 +83,7 @@ export function Members() {
                                     </div>
                                 ))}
                             </div>
-                        </FadeIn>
+                        </FadeIn> */}
                     </div>
                 </FadeIn>
             </AnimateOnScroll>

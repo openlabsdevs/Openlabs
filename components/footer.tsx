@@ -3,6 +3,7 @@
 import { Github, MessageCircle, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
 import { AnimateOnScroll, FadeIn } from "@/components/ui/motion";
+import Link from "next/link";
 
 export function Footer() {
     return (
@@ -65,13 +66,13 @@ export function Footer() {
                         <div className="mt-12 border-t border-gray-700 pt-6 text-center">
                             <p className="text-sm text-gray-500">
                                 © 2025 OpenLabs. All rights reserved. |
-                                <a href="/privacy" className="ml-1">
+                                <Link href="/privacy" className="ml-1">
                                     Privacy
-                                </a>{" "}
+                                </Link>{" "}
                                 ·
-                                <a href="/terms" className="ml-1">
+                                <Link href="/terms" className="ml-1">
                                     Terms
-                                </a>
+                                </Link>
                             </p>
                         </div>
                     </div>
