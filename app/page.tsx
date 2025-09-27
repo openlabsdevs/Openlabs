@@ -24,7 +24,7 @@ export default function OpenLabsLanding() {
       <About />
 
       {/* Completed Projects Section */}
-      {/* <CompletedProjects /> */} 
+      {/* <CompletedProjects /> */}
 
       {/* Ongoing Projects Section */}
       <OngoingProjects />
@@ -32,11 +32,12 @@ export default function OpenLabsLanding() {
       {/* Testimonials Section */}
       {/* <Testimonials /> */}
 
+      {/* Contact Form Section */}
+      <Contact />
+
       {/* Members Section */}
       <Members />
 
-      {/* Contact Form Section */}
-      <Contact />
 
     </div>
   )

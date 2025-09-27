@@ -13,21 +13,21 @@ const ongoingProjects = [
     {
         name: "Snap-Form",
         description: "Snap-form is a modern, agentic AI form builder that lets you create, edit, and analyze forms.",
-        progress: 20,
-        logo: "/placeholder.svg?height=64&width=64",
-    },
-    {
-        name: "Aura",
-        description: "Aura is a Web3-native freelancing marketplace powered by Solana.",
-        progress: 5,
-        logo: "/placeholder.svg?height=64&width=64",
+        progress: 12,
+        logo: "/snap-form.png",
     },
     {
         name: "Hacklog",
         description: "Platform to create and manage Compititive Programming Contests with ease.",
         progress: 5,
-        logo: "/placeholder.svg?height=64&width=64",
+        logo: "/hacklog.png",
     },
+    {
+        name: "Aura",
+        description: "Aura is a Web3-native freelancing marketplace powered by Solana.",
+        progress: 8,
+        logo: "/aura.png",
+    }
 ]
 
 

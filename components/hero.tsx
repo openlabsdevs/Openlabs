@@ -20,7 +20,7 @@ export function Hero() {
               <h1 className="text-5xl md:text-6xl font-bold mb-3 mr-3">Empowering</h1>
               <RotatingText
                 texts={['Open-source', 'Community', 'Development', 'Logic']}
-                mainClassName="text-5xl md:text-6xl font-bold overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center mb-3"
+                mainClassName="text-5xl md:text-6xl font-bold overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center"
                 staggerFrom={"last"}
                 initial={{ y: "100%" } as any}
                 animate={{ y: 0 } as any}
