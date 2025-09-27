@@ -8,9 +8,12 @@ import { Navbar } from '@/components/navbar';
 
 export const metadata: Metadata = {
   title: 'OpenLabs',
-  description: 'Open Source Community created Bashar Khan',
+  description: 'Join OpenLabs: the premier society for open-source contributors',
   icons: {
     icon: './favicon.ico',
+  },
+  openGraph: {
+    images: './og.png',
   },
 }
 
