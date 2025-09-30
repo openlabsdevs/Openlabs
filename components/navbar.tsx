@@ -8,24 +8,48 @@ import Logo from "../public/Logo.png";
 import { useTheme } from "next-themes";
 import { Toggle } from "./ui/toggle";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 
 export function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { theme, setTheme } = useTheme();
     const router = useRouter();
+    const controls = useAnimation();
+    const [lastY, setLastY] = useState(0);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentY = window.scrollY;
+            if (currentY > lastY) {
+                // Scrolling down
+                controls.start("hidden");
+            } else {
+                // Scrolling up
+                controls.start("visible");
+            }
+            setLastY(currentY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastY, controls]);
 
 
     const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
     const scroll = (id: string) => {
-        const targetElement = document.getElementById(id);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-            });
+        if (window.location.pathname === '/') {
+            const targetElement = document.getElementById(id);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }
+        } else {
+            router.push('/#' + id);
         }
     }
 
@@ -33,8 +57,12 @@ export function Navbar() {
 
     return (
         <motion.nav
-            initial={{ y: -60, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            variants={{
+                visible: { y: 0, opacity: 1 },
+                hidden: { y: -60, opacity: 0 },
+            }}
+            initial="visible"
+            animate={controls}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="fixed top-0 w-screen z-60 h-16 py-2 bg-background"
         >

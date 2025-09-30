@@ -4,8 +4,25 @@ import { Github, MessageCircle, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
 import { AnimateOnScroll, FadeIn } from "@/components/ui/motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export function Footer() {
+    const router = useRouter();
+
+    const scroll = (id: string) => {
+        if (window.location.pathname === '/') {
+            const targetElement = document.getElementById(id);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }
+        } else {
+            router.push('/#' + id);
+        }
+    }
+
     return (
         <footer className="py-12 px-6 lg:px-24">
             <AnimateOnScroll>
@@ -20,22 +37,22 @@ export function Footer() {
                             <div>
                                 <h3 className="text-base font-semibold  mb-2">Quick Links</h3>
                                 <div className="space-y-2">
-                                    <a href="#about" className="block transition-colors text-sm">
+                                    <a onClick={() => scroll("about")} className="block transition-colors text-sm hover:cursor-pointer">
                                         About
                                     </a>
-                                    {/* <a href="#completed" className="block transition-colors text-sm">
+                                    {/* <a onClick={() => scroll("completed")} className="block transition-colors text-sm hover:cursor-pointer">
                                         Completed Projects
                                     </a> */}
-                                    <a href="#ongoing" className="block transition-colors text-sm">
+                                    <a onClick={() => scroll("ongoing")} className="block transition-colors text-sm hover:cursor-pointer">
                                         Ongoing Projects
                                     </a>
-                                    {/* <a href="#testimonials" className="block transition-colors text-sm">
+                                    {/* <a onClick={() => scroll("testimonials")} className="block transition-colors text-sm hover:cursor-pointer">
                                         Testimonials
                                     </a> */}
-                                    <a href="#members" className="block transition-colors text-sm">
+                                    <a onClick={() => scroll("members")} className="block transition-colors text-sm hover:cursor-pointer">
                                         Members
                                     </a>
-                                    <a href="#contact" className="block transition-colors text-sm">
+                                    <a onClick={() => scroll("contact")} className="block transition-colors text-sm hover:cursor-pointer">
                                         Contact
                                     </a>
                                 </div>
