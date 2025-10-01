@@ -10,8 +10,8 @@ import { AnimateOnScroll, FadeIn } from "@/components/ui/motion"
 
 export function About() {
     return (
-        <div id="about">
-            <AnimateOnScroll className="py-20 px-6 xl:px-40 flex gap-12">
+        <div id="about" className="w-full flex items-center justify-center">
+            <AnimateOnScroll className="py-20 px-6 xl:px-40 flex gap-12 mx-auto">
                 <FadeIn delay={0.1} className="hidden lg:block">
                     <div className="hidden w-auto lg:flex flex-col gap-4">
                         <h1 className="text-4xl font-bold">Our Mission</h1>
