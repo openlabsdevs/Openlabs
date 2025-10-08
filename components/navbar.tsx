@@ -82,6 +82,9 @@ export function Navbar() {
                             <a onClick={() => scroll("members")} className="font-medium hover:underline transition-colors hover:cursor-pointer">
                                 Members
                             </a>
+                            <a onClick={() => router.push("/docs")} className="font-medium hover:underline transition-colors hover:cursor-pointer">
+                                Docs
+                            </a>
                             <a onClick={() => scroll("contact")} className="font-medium hover:underline transition-colors hover:cursor-pointer">
                                 Contact
                             </a>
@@ -117,6 +120,9 @@ export function Navbar() {
                             </a>
                             <a onClick={() => scroll("members")} className="block font-medium">
                                 Members
+                            </a>
+                            <a onClick={() => router.push("/docs")} className="block font-medium">
+                                Docs
                             </a>
                             <a onClick={() => scroll("contact")} className="block font-medium">
                                 Contact
