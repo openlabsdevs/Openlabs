@@ -50,12 +50,14 @@ export function Hero() {
                 </DialogTrigger>
                 <GetStarted />
               </Dialog>
+               <Link href={"/learn-more"}>
               <Button
                 variant="outline"
                 className="border-2 px-6 py-3 text-lg transition-colors"
               >
-                <Link href={"/learn-more"}>Learn More</Link>
-              </Button>
+               Learn More
+               </Button>
+              </Link>
             </div>
           </FadeIn>
           <FadeIn delay={0.5}>

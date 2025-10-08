@@ -21,13 +21,13 @@ export default function GetStarted() {
                     Join the community. Build. Learn. Lead.
                 </div>
             </div>
-
-            <Button >
-                <Link href={"/form"} className="flex items-center gap-2">
+            <Link href={"/form"} className="flex items-center gap-2 w-full">
+            <Button className="w-full">
                     <ExternalLink />
                     ApplyLink
-                </Link>
+                
             </Button>
+           </Link>
         </DialogContent>
     )
 }
